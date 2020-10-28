@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\bin\Debug\IND Weather API.exe.config
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\bin\Debug\IND Weather API.exe
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\bin\Debug\IND Weather API.pdb
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\obj\Debug\IND Weather API.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\obj\Debug\IND Weather API.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\obj\Debug\IND Weather API.csproj.CopyComplete
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\obj\Debug\IND Weather API.exe
+C:\Users\Admin\source\repos\IND-Weather-API\IND Weather API\obj\Debug\IND Weather API.pdb
