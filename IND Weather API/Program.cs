@@ -13,20 +13,21 @@ namespace IND_Weather_API
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            PostSiteApi();
-        }
+        // Change this path to where your certificate is located
+        private static string certifacatePath = @"C:\Certificates\IND\certificate.pfx";
 
-        public static async Task PostSiteApi()
+        // Change this path to your desired output path
+        private static string outputPath = @"C:\Users\Admin\source\ImportLogs\IND Weather API Output.txt";
+        
+
+        static void Main(string[] args)
         {
             string apiUrl = "https://ind.dbgurusnetwork.com.au/api/SiteAPI/rc_au";
             string interval = "All";
             string unit = "EFD-0111";
-            var startDate = "";
-            var endDate = "";
-            var postedFile = File.ReadAllText(@"C:\Certificates\IND\certificate.pfx");
-            var fileStream = ToStream(postedFile);
+            var startDate = "2020-10-27 12:00";
+            var endDate = "2020-10-29 12:00";
+            var postedFile = File.OpenRead(certifacatePath);
             var uTCDateStart = Convert.ToDateTime(startDate).ToString("yyyy.MM.dd HH:mm");
             var uTCDateEnd = Convert.ToDateTime(endDate).ToString("yyyy.MM.dd HH:mm");
             var parameters = new
@@ -37,9 +38,13 @@ namespace IND_Weather_API
                 Interval = interval
             };
             string json = JsonConvert.SerializeObject(parameters);
-            var output = await Post(apiUrl, json, ConvertInputStreamToByteArray(fileStream));
+            var output = Post(apiUrl, json, ConvertInputStreamToByteArray(postedFile)).Result;
+            var result = new StringBuilder();
+            result.AppendLine("Status Code: " + output["statusCode"]);
+            result.AppendLine("\nResponse Body: " + output["responseBody"]);
+            result.AppendLine("\nResponse Header: " + output["responseHeader"]);
 
-            Console.WriteLine("ResponseBody:" + output["responseBody"]);
+            File.WriteAllText(outputPath, result.ToString());
         }
 
         public static byte[] ConvertInputStreamToByteArray(Stream stream)
